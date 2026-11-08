@@ -1,0 +1,396 @@
+/* ==========================================================================
+   札幌 クリスマスデートガイド スタイルシート (style.css)
+   ========================================================================== */
+
+/* ==========================================
+   1. ページ全体の基本スタイル
+   ========================================== */
+body {
+  /* 読みやすいフォントの指定 */
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  /* 文字の基本色（濃いグレー） */
+  color: #2c3e50;
+  /* ページの背景色（冬のクリスマスの夜空を思わせる深いネイビー） */
+  background-color: #0b192c;
+  /* 背景をうっすらグラデーションに（上から下へ夜空が広がる） */
+  background-image: linear-gradient(180deg, #0b192c 0%, #152942 50%, #1b3557 100%);
+  background-attachment: fixed;
+  /* 余白のリセット */
+  margin: 0;
+  padding: 0;
+  /* 行の高さ（読みやすさのため広め） */
+  line-height: 1.8;
+  /* 横スクロールが出ないようにする */
+  overflow-x: hidden;
+}
+
+/* ==========================================
+   2. 雪のアニメーション（動きのある背景）
+   ========================================== */
+/* 雪の粒を入れる全画面コンテナ */
+.snow-container {
+  /* 画面全体に固定配置 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* マウスクリックやタッチを下のリンクやボタンに通すための超重要設定 */
+  pointer-events: none;
+  /* 画面外にはみ出た雪を隠す */
+  overflow: hidden;
+  /* 最前面に配置（他のコンテンツの上に降らせる） */
+  z-index: 9999;
+}
+
+/* 個々の雪の結晶 */
+.snowflake {
+  position: absolute;
+  top: -30px;
+  /* 雪の色（純白） */
+  color: #ffffff;
+  /* テキスト選択を無効化 */
+  user-select: none;
+  /* アニメーションの設定：fall という名前の動きを無限ループ */
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* 雪が上から下へと舞い落ちるアニメーションキーフレーム */
+@keyframes fall {
+  0% {
+    top: -30px;
+    transform: translateX(0px) rotate(0deg);
+    opacity: 0.9;
+  }
+  50% {
+    /* 途中で左右にふわふわ揺れる動き */
+    transform: translateX(25px) rotate(180deg);
+  }
+  100% {
+    /* 画面下部まで落ちきる */
+    top: 105vh;
+    transform: translateX(-20px) rotate(360deg);
+    opacity: 0.2;
+  }
+}
+
+/* ==========================================
+   3. ヘッダーのスタイル（クリスマス装飾）
+   ========================================== */
+header {
+  /* ヘッダーの背景（クリスマス深紅×夜空のツートン境界） */
+  background-color: #8b0000;
+  /* 文字色（白） */
+  color: #ffffff;
+  /* 内側の余白 */
+  padding: 26px 16px;
+  /* 中央揃え */
+  text-align: center;
+  /* 下部にゴールドのきらめくボーダー */
+  border-bottom: 4px solid #f1c40f;
+  /* 影をつけて立体感を出す */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* サイトタイトル */
+.site-title {
+  /* 文字サイズ */
+  font-size: 28px;
+  /* 太字 */
+  font-weight: bold;
+  /* 文字色（輝くゴールド） */
+  color: #fce38a;
+  /* 下側の余白 */
+  margin-bottom: 12px;
+  /* 文字の影（ほんのり光る効果） */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================
+   4. ナビゲーションメニュー
+   ========================================== */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin: 6px 10px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 20px;
+  /* ほんのり背景色 */
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* マウスを乗せたとき */
+nav a:hover {
+  background-color: #f1c40f;
+  color: #8b0000;
+}
+
+/* 現在開いているページ（カレント） */
+nav a.current {
+  background-color: #f1c40f;
+  color: #8b0000;
+  border: 1px solid #ffffff;
+}
+
+/* ==========================================
+   5. メインコンテンツエリア
+   ========================================== */
+main {
+  /* 最大幅を指定して中央に寄せる */
+  max-width: 920px;
+  margin: 35px auto;
+  padding: 0 20px;
+}
+
+/* 大見出し（H1） */
+h1 {
+  font-size: 28px;
+  /* 文字色（白）夜空の背景に映えるように */
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 24px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* 中見出し（H2） */
+h2 {
+  font-size: 22px;
+  /* クリスマスレッド */
+  color: #a82323;
+  /* 左側にモミの木グリーンの縦線 */
+  border-left: 6px solid #1e7e34;
+  padding-left: 12px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+/* 段落（p） */
+p {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+/* 導入のリード文 */
+.lead-text {
+  text-align: center;
+  /* 読みやすい薄いアイボリー */
+  color: #f0f4f8;
+  font-size: 17px;
+  margin-bottom: 35px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* ==========================================
+   6. 画像のスタイル
+   ========================================== */
+/* トップページのメインバナー画像 */
+.main-hero-image {
+  width: 100%;
+  max-height: 400px;
+  /* 写真の比率を保ったまま綺麗に収める */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 35px;
+  border: 3px solid #f1c40f; /* ゴールドの枠線 */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+/* スポットカード内の写真 */
+.card-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  display: block;
+  border: 1px solid #e0e6ed;
+}
+
+/* 詳細ページのトップ写真（アイキャッチ） */
+.detail-hero-image {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  border: 3px solid #f1c40f;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+/* ==========================================
+   7. スポット紹介カード（トップページ）
+   ========================================== */
+.spot-card {
+  /* 明るく温かみのある白背景 */
+  background-color: #ffffff;
+  /* 角を丸くする */
+  border-radius: 12px;
+  /* ゴールドの細い枠線 */
+  border: 2px solid #d4af37;
+  /* 内側の余白 */
+  padding: 26px;
+  /* カード同士の間隔 */
+  margin-bottom: 35px;
+  /* 影をつけてカードを浮かび上がらせる */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.spot-card h2 {
+  margin-top: 0;
+}
+
+/* カテゴリバッジ */
+.badge {
+  /* モミの木グリーン */
+  background-color: #1e7e34;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+/* 「詳細を見る」ボタンリンク */
+.btn-link {
+  display: inline-block;
+  /* クリスマスレッド */
+  background-color: #a82323;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 15px;
+  /* ゴールドのボーダー */
+  border: 1px solid #f1c40f;
+}
+
+.btn-link:hover {
+  background-color: #7b1113;
+  color: #fce38a;
+}
+
+/* ==========================================
+   8. インタラクティブセクション（ボタン操作用エリア）
+   ========================================== */
+.action-box {
+  /* あたたかみのあるキャンドルカラー */
+  background-color: #fff9e6;
+  border: 2px dashed #d4af37;
+  border-radius: 12px;
+  padding: 28px;
+  text-align: center;
+  margin: 40px 0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.action-box h2 {
+  border-left: none;
+  padding-left: 0;
+  text-align: center;
+}
+
+/* 操作用ボタン */
+button {
+  /* クリスマスレッドのボタン */
+  background-color: #a82323;
+  color: #ffffff;
+  border: 2px solid #f1c40f;
+  border-radius: 25px;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  /* 影をつけて押しボタンらしく */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #1e7e34; /* モミの木グリーンに変化 */
+  border-color: #ffffff;
+}
+
+/* ボタンを押して表示されるメッセージ */
+.result-text {
+  font-size: 17px;
+  color: #1e4620;
+  font-weight: bold;
+  margin-top: 20px;
+  background-color: #eafaf1;
+  border: 1px solid #27ae60;
+  padding: 16px;
+  border-radius: 8px;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   9. 下層ページ用（基本情報テーブルなど）
+   ========================================== */
+.content-wrapper {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 2px solid #d4af37;
+  padding: 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  margin-bottom: 30px;
+}
+
+.info-list {
+  background-color: #fcfcfc;
+  border: 1px solid #e0e6ed;
+  border-radius: 8px;
+  padding: 20px 24px 20px 40px;
+  margin-bottom: 25px;
+}
+
+.info-list li {
+  margin-bottom: 10px;
+}
+
+/* 戻るリンク */
+.back-link-box {
+  text-align: center;
+  margin: 35px 0 15px 0;
+}
+
+.back-link {
+  color: #fce38a;
+  text-decoration: underline;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.back-link:hover {
+  color: #ffffff;
+}
+
+/* ==========================================
+   10. フッターのスタイル
+   ========================================== */
+footer {
+  background-color: #8b0000;
+  color: #f0f4f8;
+  text-align: center;
+  padding: 25px 10px;
+  font-size: 13px;
+  border-top: 4px solid #f1c40f;
+  margin-top: 60px;
+}

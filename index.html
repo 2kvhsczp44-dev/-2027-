@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎄 札幌 クリスマスデート 2026 - スポット三選</title>
+  <!-- 共通スタイルの読み込み -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ==========================================
+       ヘッダーエリア（クリスマス装飾）
+       ========================================== -->
+  <header>
+    <!-- サイトタイトル -->
+    <div class="site-title">🎄 札幌 クリスマスデート 2026 🎅</div>
+    <!-- ナビゲーションメニュー -->
+    <nav>
+      <ul>
+        <li><a href="index.html" class="current">❄️ ホーム</a></li>
+        <li><a href="spot-odori.html" target="_blank" rel="noopener noreferrer">✨ 大通公園・クリスマス市</a></li>
+        <li><a href="spot-factory.html" target="_blank" rel="noopener noreferrer">🎄 サッポロファクトリー</a></li>
+        <li><a href="spot-moiwayama.html" target="_blank" rel="noopener noreferrer">🔔 もいわ山展望台</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ==========================================
+       メインコンテンツエリア
+       ========================================== -->
+  <main>
+    <!-- 大見出し（H1） -->
+    <h1>❄️ 12月の札幌で過ごす聖なる夜！クリスマスデートスポット3選 ❄️</h1>
+
+    <!-- 導入の段落（リード文） -->
+    <p class="lead-text">
+      白銀の世界と美しいイルミネーションが街を包み込む12月の札幌。<br>
+      大切な人と忘れられないロマンチックなクリスマスを過ごせる、厳選デートスポットをご紹介します！
+    </p>
+
+    <!-- トップページのメインヒーロー画像 -->
+    <img src="images/hero-sapporo.jpg" alt="雪の札幌クリスマスの街並みとイルミネーション" class="main-hero-image">
+
+    <!-- ------------------------------------------
+         スポット1：大通公園
+         ------------------------------------------ -->
+    <article class="spot-card">
+      <!-- スポットの写真 -->
+      <img src="images/odori-christmas.jpg" alt="さっぽろホワイトイルミネーションとミュンヘン・クリスマス市" class="card-image">
+      <span class="badge">スポット 1 / 屋外・王道イルミネーション</span>
+      <h2>✨ さっぽろホワイトイルミネーション ＆ ミュンヘン・クリスマス市</h2>
+      <p>
+        大通公園を幻想的な光で埋め尽くす冬の札幌の風物詩。本場ドイツのクリスマスマーケットが開催され、
+        温かいグリューワイン（ホットワイン）や焼きソーセージを片手に歩くだけで特別な気分に浸れます。
+      </p>
+      <a href="spot-odori.html" class="btn-link" target="_blank" rel="noopener noreferrer">詳しい見どころ・アクセスを見る &rarr;</a>
+    </article>
+
+    <!-- ------------------------------------------
+         スポット2：サッポロファクトリー
+         ------------------------------------------ -->
+    <article class="spot-card">
+      <!-- スポットの写真 -->
+      <img src="images/factory-tree.jpg" alt="サッポロファクトリーの約15mジャンボクリスマスツリー" class="card-image">
+      <span class="badge">スポット 2 / 屋内・全天候型アトリウム</span>
+      <h2>🎄 サッポロファクトリー ジャンボクリスマスツリー</h2>
+      <p>
+        ガラス張りの巨大な全天候型アトリウムに登場する、約15メートルの本物のモミの木を使った巨大ツリー！
+        1時間ごとに音楽と光が連動するショーは必見。屋内施設なので寒さを気にせず快適なデートが楽しめます。
+      </p>
+      <a href="spot-factory.html" class="btn-link" target="_blank" rel="noopener noreferrer">詳しい見どころ・アクセスを見る &rarr;</a>
+    </article>
+
+    <!-- ------------------------------------------
+         スポット3：もいわ山展望台
+         ------------------------------------------ -->
+    <article class="spot-card">
+      <!-- スポットの写真 -->
+      <img src="images/moiwayama-nightview.jpg" alt="もいわ山展望台から望む札幌の日本新三大夜景と幸せの鐘" class="card-image">
+      <span class="badge">スポット 3 / 絶景夜景・恋人の聖地</span>
+      <h2>🔔 もいわ山山頂展望台（日本新三大夜景）</h2>
+      <p>
+        「恋人の聖地」サテライトに選ばれている絶景スポット。標高531mから見下ろす札幌の雪景色と光のパノラマ夜景は息をのむ美しさ。
+        山頂展望台にある「幸せの鐘」を二人で鳴らしてロマンチックなひとときを。
+      </p>
+      <a href="spot-moiwayama.html" class="btn-link" target="_blank" rel="noopener noreferrer">詳しい見どころ・アクセスを見る &rarr;</a>
+    </article>
+
+    <!-- ------------------------------------------
+         インタラクティブエリア（JavaScriptで文章が変わるボタン）
+         ------------------------------------------ -->
+    <section class="action-box">
+      <h2>🎁 どこに行くか迷ったら？今日のデート診断 🎁</h2>
+      <p>ボタンをクリックすると、今日のおすすめスポットとアドバイスが表示されます！</p>
+      <!-- クリックで動作するボタン -->
+      <button id="diagnosis-btn">今日のおすすめを診断する ✨</button>
+      <!-- クリックされたら文章が入る段落 -->
+      <p id="diagnosis-result" class="result-text" style="display: none;"></p>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       フッターエリア
+       ========================================== -->
+  <footer>
+    <p>&copy; 2026 札幌 クリスマスデート. All rights reserved. ❄️ Merry Christmas! 🎄</p>
+  </footer>
+
+  <!-- JavaScriptの読み込み -->
+  <script src="script.js"></script>
+</body>
+
+</html>
